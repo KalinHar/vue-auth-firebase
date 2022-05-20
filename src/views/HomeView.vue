@@ -1,18 +1,31 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1>home</h1>
+    <div>{{error}}</div>
+    <button @click="onLogout">Logout</button>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import { getAuth, signOut } from "firebase/auth";
 
 export default {
-  name: 'HomeView',
-  components: {
-    HelloWorld
+  
+  data() {
+    return {
+      error: '',
+      user: '4'
+    } 
+  },
+  methods: {
+    onLogout() {
+      const auth = getAuth();
+      signOut(auth).then(() => {
+        this.$router.replace({ name: "login" });
+      }).catch((error) => {
+        this.error = error.message
+      });
+    }
   }
 }
 </script>
