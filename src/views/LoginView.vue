@@ -1,11 +1,13 @@
 <template>
   <form class="login-form" @submit.prevent="onLogin">
-    <h1>Login</h1>
+    <h1>Login Page</h1>
     <div v-if="error">{{error}}</div>
     <label for="email">Email:</label>
-    <input type="text" name="email" placeholder="email" v-model="email">
+    <input type="text" name="email" placeholder="enter email" v-model="email">
+    <br>
     <label for="pass">Password:</label>
-    <input type="text" name="pass" placeholder="password" v-model="password">
+    <input type="text" name="pass" placeholder="enter password" v-model="password">
+    <br>
     <input type="submit" value="Login">
   </form>
 </template>

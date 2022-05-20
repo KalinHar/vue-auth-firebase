@@ -1,8 +1,8 @@
 <template>
   <div class="home">
     <h1>home</h1>
-    <div>{{error}}</div>
-    <button @click="onLogout">Logout</button>
+    <div>{{user}}</div>
+    <button v-if="user" @click="onLogout">Logout</button>
   </div>
 </template>
 
@@ -12,9 +12,12 @@ import { getAuth, signOut } from "firebase/auth";
 export default {
   
   data() {
+    const auth = getAuth();
+    const user = auth.currentUser
+
     return {
       error: '',
-      user: '4'
+      user
     } 
   },
   methods: {

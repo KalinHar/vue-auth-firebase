@@ -1,7 +1,7 @@
 <template>
   <nav>
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> 
+      <router-link to="/about">About</router-link> |
 
       <router-link to="/login">Login</router-link> |
       <router-link to="/register">Register</router-link>
@@ -12,30 +12,13 @@
 
 <script>
 import { getAuth } from "firebase/auth";
-import { onMounted, onChange } from 'vue';
+import { onMounted, onChange, onUpdated } from 'vue';
 
 
 export default {
 
   setup() {
-    // let user = ''
-
-    // onMounted(() => {
-    //   const auth = getAuth();
-    //   const data = auth.currentUser;
-
-    //   if (data) {
-    //     user = data
-    //   } else {
-    //     user = ''
-    //   }
-    // });
-
-    
-
-    // return {
-    //   user,
-    // }
+ 
   },
   
   
